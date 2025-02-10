@@ -1,7 +1,13 @@
 //generator
 
 async function* gen() {
-    let res = yield fetch("https://jsonplaceholder.typicode.com/todos");
+    let res = yield fetch("https://mart-node-49hw.vercel.app/login",{
+      method:"POST",
+      body:{
+        email: "genny@test.com",
+        password: "geny123!",
+      }
+    });
   
     if (res.status === 404) {
       return console.error("404 error");
