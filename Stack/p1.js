@@ -52,11 +52,31 @@ class Stack {
         this.length--
 
     }
+
+    min(){
+        if(this.length===0){
+            return undefined;
+        }
+
+        let current=this.first;
+        let minVal=this.first.value
+
+        while(current.next){
+            current=current.next;
+
+            if(current.value<minVal){
+minVal=current.value
+            }
+         
+        }
+        return minVal
+    }
 }
 
-const theStack=new Stack(0);
-theStack.push(1);
-theStack.push(2);
-theStack.pop()
-console.log(theStack);
+const theStack=new Stack(22);
+theStack.push(10);
+theStack.push(23);
+theStack.push(30);
+
+console.log(theStack.min());
 
